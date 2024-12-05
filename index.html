@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿一覧</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>投稿一覧ページ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="upload.html">アップロード</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>投稿されたファイル</h2>
+        <div class="file-box">
+            <!-- 投稿 1 -->
+            <div class="file-item">
+                <h3>タイトル: シンゴジラ</h3>
+                <p>説明: シン・ゴジラ多分皆知ってる</p>
+                <a href="files/シンゴジラ.nbs" download>ファイルをダウンロード</a><br>
+                <audio controls>
+                    <source src="files/シンゴジラ.mp3" type="audio/mpeg">
+                    あなたのブラウザは audio タグをサポートしていません。
+                </audio>
+            </div>
+
+            <!-- 投稿 2 -->
+            <div class="file-item">
+                <h3>タイトル: 別のサンプル曲</h3>
+                <p>説明: こちらは別のサンプルです。</p>
+                <a href="example.nbs" download>📂 .nbs ファイルをダウンロード</a><br>
+                <audio controls>
+                    <source src="example.mp3" type="audio/mpeg">
+                    あなたのブラウザは audio タグをサポートしていません。
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 マインクラフト音楽サイト</p>
+    </footer>
+</body>
+</html>
+
