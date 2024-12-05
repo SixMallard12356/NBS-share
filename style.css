@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #333333;
     color: white;
     padding: 10px;
     text-align: center;
@@ -34,7 +34,7 @@ section {
 }
 
 h1, h2 {
-    color: #333;
+    color: #ffffff;
 }
 
 footer {
@@ -44,6 +44,63 @@ footer {
     color: white;
 }
 
+/* ファイルカードデザイン */
+.file-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.file-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.file-item h3 {
+    color: #333;
+}
+
+.file-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden; /* リップルエフェクト用 */
+}
+
+.file-item a:hover {
+    color: #45a049;
+}
+
+/* リップルエフェクトのアニメーション */
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
 /* フォームのデザイン */
 form {
     width: 300px;
@@ -74,40 +131,4 @@ button {
 
 button:hover {
     background-color: #45a049;
-}
-.file-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-.file-item {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-}
-
-.file-item h3 {
-    color: #333;
-}
-
-.file-item a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.file-item a:hover {
-    color: #45a049;
-}
-
-audio {
-    margin-top: 10px;
-    width: 100%;
 }

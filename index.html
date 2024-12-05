@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>投稿一覧</title>
     <link rel="stylesheet" href="style.css">
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="nbs.ico" />
 </head>
 <body>
     <header>
@@ -24,7 +26,7 @@
             <div class="file-item">
                 <h3>タイトル: シンゴジラ</h3>
                 <p>説明: シン・ゴジラ多分皆知ってる</p>
-                <a href="files/シンゴジラ.nbs" download>ファイルをダウンロード</a><br>
+                <a href="files/シンゴジラ.nbs" download class="download-link">ファイルをダウンロード</a><br>
                 <audio controls>
                     <source src="files/シンゴジラ.mp3" type="audio/mpeg">
                     あなたのブラウザは audio タグをサポートしていません。
@@ -33,11 +35,11 @@
 
             <!-- 投稿 2 -->
             <div class="file-item">
-                <h3>タイトル: 別のサンプル曲</h3>
-                <p>説明: こちらは別のサンプルです。</p>
-                <a href="example.nbs" download>📂 .nbs ファイルをダウンロード</a><br>
+                <h3>タイトル: バカ通信</h3>
+                <p>説明: バカ通信、ボカロって良いですね～</p>
+                <a href="files/バカ通信（改善点あり）.nbs" download class="download-link">ファイルをダウンロード</a><br>
                 <audio controls>
-                    <source src="example.mp3" type="audio/mpeg">
+                    <source src="files/バカ通信（改善点あり）.mp3" type="audio/mpeg">
                     あなたのブラウザは audio タグをサポートしていません。
                 </audio>
             </div>
@@ -47,6 +49,30 @@
     <footer>
         <p>&copy; 2024 マインクラフト音楽サイト</p>
     </footer>
+
+    <script>
+        // ダウンロードリンクにリップルエフェクトを追加
+        const downloadLinks = document.querySelectorAll('.download-link');
+
+        downloadLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple-effect');
+
+                const rect = link.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+
+                link.appendChild(ripple);
+
+                ripple.addEventListener('animationend', () => {
+                    ripple.remove();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
